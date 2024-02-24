@@ -19,12 +19,12 @@
       font-size: 56px;
       line-height: 53px;
       margin: 0;
-      font-family: 'Coolvetica';
+      font-family: "Coolvetica";
       font-weight: 400;
-  
+
       &:before {
-        content: '<h1>';
-        font-family: 'La Belle Aurore', cursive;
+        content: "<h1>";
+        font-family: "La Belle Aurore", cursive;
         color: #ffd700;
         font-size: 18px;
         position: absolute;
@@ -32,10 +32,10 @@
         left: -15px;
         opacity: 0.6;
       }
-  
+
       &:after {
-        content: '<h1/>';
-        font-family: 'La Belle Aurore', cursive;
+        content: "<h1/>";
+        font-family: "La Belle Aurore", cursive;
         color: #ffd700;
         font-size: 18px;
         position: absolute;
@@ -45,7 +45,7 @@
         opacity: 0.6;
       }
     }
-  
+
     h2 {
       color: #8d8d8d;
       margin-top: 20px;
@@ -55,7 +55,7 @@
       letter-spacing: 3px;
       animation: fadeIn 1s 1.8s backwards;
     }
-  
+
     .flat-button {
       color: #ffd700;
       font-size: 13px;
@@ -69,7 +69,7 @@
       float: left;
       animation: fadeInAnimation 1s 1.8s backwards;
       white-space: nowrap;
-  
+
       &:hover {
         background: #ffd700;
         color: #333;
@@ -77,7 +77,7 @@
     }
   }
 
-  .profile-img{
+  .profile-img {
     height: 100%;
     width: 100%;
     right: 0;
@@ -85,31 +85,13 @@
   }
 }
 
-
-
 @media screen and (max-width: 1200px) {
-
-  .container-text-zone{
+  .container-text-zone {
     position: relative;
     top: -10%;
-
   }
 
-  .profile-img{
+  .profile-img {
     display: none;
   }
-  // .home-page .text-zone {
-  //   position: initial;
-  //   width: 100%;
-  //   transform: none;
-  //   padding: 10px;
-  //   box-sizing: border-box;
-  // }
-
-  // .home-page .flat-button {
-  //   float: none;
-  //   display: block;
-  //   margin: 20px auto 0 auto;
-  //   width: 124px;
-  // }
 }
