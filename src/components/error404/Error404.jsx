@@ -45,7 +45,7 @@ const Error404 = () => {
                 idx={16}
               />
             </h1>
-            <Link to="/home" className="flat-button">
+            <Link to="/home" className="flat-button-error">
               Home
             </Link>
           </div>
