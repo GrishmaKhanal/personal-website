@@ -9,9 +9,9 @@ import Layout from "../layout/Layout";
 const Home = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
 
-  const nameArray = ["G", "r", "i", "s", "h", "m", "a"];
-  const jobArray = ["P", "r", "o", "g", "r", "a", "m", "m", "e", "r", "."];
-
+  const nameArray = ["G", "r", "i", "s", "h", "m", "a", "!"];
+  let job = "Programmer in Making";
+  const jobArray = job.split("");
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       console.log("letter class = " + letterClass);
@@ -39,13 +39,13 @@ const Home = () => {
               <AnimatedLetters
                 letterClass={letterClass}
                 strArray={nameArray}
-                idx={17}
+                idx={15}
               />
               <br />
               <AnimatedLetters
                 letterClass={letterClass}
                 strArray={jobArray}
-                idx={24}
+                idx={16}
               />
             </h1>
             <h2>Student | C++ Intern | Web Developer</h2>

@@ -3,6 +3,8 @@ import { useState } from "react";
 import "./Sidebar.scss";
 import logoG from "../../assets/images/logoG.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useLocation } from 'react-router-dom';
+
 import {
   faEnvelope,
   faHome,
@@ -19,6 +21,8 @@ import {
 
 const Sidebar = () => {
   const [showNav, setShowNav] = useState(false);
+  const location = useLocation();
+  const pathname = location.pathname;
 
   return (
     <>
@@ -35,6 +39,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/"
             onClick={() => setShowNav(false)}
+            className={(pathname === "/" || pathname === "/home") ? "active" : ""}
           >
             <FontAwesomeIcon className="fontawesome-icons" icon={faHome} />
           </NavLink>
@@ -49,8 +54,8 @@ const Sidebar = () => {
           </NavLink>
           <NavLink
             activeclassname="active"
-            className="portfolio-link"
-            to="/portfolio"
+            className="projects-link"
+            to="/projects"
             onClick={() => setShowNav(false)}
           >
             <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
