@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   top: 0;
-  gap: 50rem;
+  gap: 100rem;
 
   .text-zone {
     position: relative;
@@ -21,7 +21,7 @@
   align-items: center;
 
   .cubespinner {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

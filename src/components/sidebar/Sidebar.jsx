@@ -3,7 +3,8 @@ import { useState } from "react";
 import "./Sidebar.scss";
 import logoG from "../../assets/images/logoG.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
+import resumePDF from "../../assets/GrishmaResumef.pdf";
 
 import {
   faEnvelope,
@@ -11,6 +12,7 @@ import {
   faSuitcase,
   faUser,
   faBars,
+  faDownload,
   faClose,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -23,7 +25,6 @@ const Sidebar = () => {
   const [showNav, setShowNav] = useState(false);
   const location = useLocation();
   const pathname = location.pathname;
-
   return (
     <>
       <div className="nav-bar">
@@ -39,7 +40,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/"
             onClick={() => setShowNav(false)}
-            className={(pathname === "/" || pathname === "/home") ? "active" : ""}
+            className={pathname === "/" || pathname === "/home" ? "active" : ""}
           >
             <FontAwesomeIcon className="fontawesome-icons" icon={faHome} />
           </NavLink>
@@ -69,6 +70,20 @@ const Sidebar = () => {
           >
             <FontAwesomeIcon icon={faEnvelope} />
           </NavLink>
+          <NavLink
+            excat="true"
+            className={
+              pathname === "/resume" ? "active cv-download" : "cv-download"
+            }
+            to="/resume"
+            onClick={() => {
+              setShowNav(false);
+              window.open(resumePDF, "_blank");
+            }}
+          >
+            <FontAwesomeIcon icon={faDownload} color="#4d4d4e" />
+          </NavLink>
+
           <FontAwesomeIcon
             onClick={() => setShowNav(false)}
             icon={faClose}
@@ -82,7 +97,7 @@ const Sidebar = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://linkedin.com/in/grishma-raj-khanal-395346204/"
+              href="http s://linkedin.com/in/grishma-raj-khanal-395346204/"
             >
               <FontAwesomeIcon icon={faLinkedin} className="anchor-icon" />
             </a>

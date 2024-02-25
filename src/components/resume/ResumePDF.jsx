@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
-import "./Error404.scss";
+import Layout from "../layout/Layout";
 import { useEffect, useState } from "react";
 import AnimatedLetters from "../animatedletters/AnimatedLetters";
-import Loader from "react-loaders";
-import Layout from "../layout/Layout";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-const Error404 = () => {
+import Loader from "react-loaders";
+import { NavLink } from "react-router-dom";
+import resumePDF from "../../assets/GrishmaResumef.pdf";
+
+const ResumePDF = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
 
-  let lostMessage1 = "This page does not exists!";
-  let lostMessage2 = "Go Back";
+  let lostMessage1 = "You can view my resume here!";
+  let lostMessage2 = " ";
   const lostMessageArray1 = lostMessage1.split("");
   const lostMessageArray2 = lostMessage2.split("");
   useEffect(() => {
@@ -20,7 +23,6 @@ const Error404 = () => {
 
     return () => clearTimeout(timeoutId);
   }, []);
-
   return (
     <>
       <Layout />
@@ -29,9 +31,9 @@ const Error404 = () => {
           <div className="text-zone">
             <h1 className="error-color">
               <div className="big-404">
-                <span className={`${letterClass} _1`}>4</span>
-                <span className={`${letterClass} _1`}>0</span>
-                <span className={`${letterClass} _1`}>4</span>
+                <span className={`${letterClass} _1`}>H</span>
+                <span className={`${letterClass} _1`}>E</span>
+                <span className={`${letterClass} _1`}>Y</span>
               </div>
               <AnimatedLetters
                 letterClass={letterClass}
@@ -45,9 +47,15 @@ const Error404 = () => {
                 idx={16}
               />
             </h1>
-            <Link to="/home" className="flat-button-error">
-              Home
-            </Link>
+            <NavLink
+            className="flat-button-error"
+            to="/resume"
+            onClick = {() => {
+              window.open(resumePDF, '_blank');
+            }}
+          >
+            Resume / CV <FontAwesomeIcon icon={faDownload} />
+          </NavLink>
           </div>
         </div>
       </div>
@@ -56,4 +64,4 @@ const Error404 = () => {
   );
 };
 
-export default Error404;
+export default ResumePDF;

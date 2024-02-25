@@ -8,6 +8,7 @@ import {
   faJsSquare,
   faReact,
 } from "@fortawesome/free-brands-svg-icons";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import Loader from "react-loaders";
 import AnimatedLetters from "../animatedletters/AnimatedLetters";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -49,19 +50,18 @@ const About = () => {
               />
             </h1>
             <p className="about-text">
-              I&apos;m a very ambitious front-end developer looking for a role
-              in an established IT company with the opportunity to work with the
-              latest technologies on challenging and diverse projects.
+              I&apos;m a dedicated Computer Engineering Student from Kathamndu,
+              Nepal with a passion for technology and software development.
             </p>
             <p className="about-text">
-              &apos; I&apos;m quiet confident, naturally curious, and
-              perpetually working on improving my chops one design problem at a
-              time.
+              I&apos;m quiet confident, naturally curious, and perpetually
+              working on improving myself one ability at a time. I am eager to
+              explore new oppurtunities and contribute the ever-evolving field
+              of technology.
             </p>
             <p className="about-text">
-              If I need to define myself in one sentence that would be a family
-              person, father of a beautiful daughter, a sports fanatic,
-              photography enthusiast, and tech-obsessed!!!
+              I have intest in following latest tech news, and enjoy following
+              football, watching movies, anime.
             </p>
           </div>
         </div>
@@ -92,6 +92,9 @@ const About = () => {
                 <FontAwesomeIcon icon={faPython} color="#28A4D9" />
               </div>
               <div className="face1">
+                <FontAwesomeIcon icon={faDatabase} color="#28A4D9" />
+              </div>
+              <div className="face1">
                 <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
               </div>
               <div className="face1">
@@ -104,7 +107,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Loader type="pacman" />
+      <Loader type="ball-grid-beat" />
     </>
   );
 };

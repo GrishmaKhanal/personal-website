@@ -6,6 +6,7 @@ import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Projects from "./components/projects/Projects";
 import Error404 from "./components/error404/Error404";
+import ResumePDF from "./components/resume/ResumePDF";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="projects" element={<Projects />} />
+        <Route path="resume" element={<ResumePDF />} />
         <Route path="/*" element={<Error404 />} />
       </Routes>
     </>
