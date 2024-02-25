@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Loader from "react-loaders";
 import Layout from "../layout/Layout";
-import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import AnimatedLetters from "../animatedletters/AnimatedLetters";
 import "./Contact.scss";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
-  const form = useRef();
+  const [notification, setNotification] = useState("");
+  const formRef = useRef(null); // Use useRef for resetting the form
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -19,20 +20,32 @@ const Contact = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  const sendEmail = (e) => {
+  useEffect(() => {
+    if (notification) {
+      const timerId = setTimeout(() => setNotification(""), 5000);
+      return () => clearTimeout(timerId);
+    }
+  }, [notification]);
+
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm("gmail", "template_YeJhZkgb", form.current, "your-token")
-      .then(
-        () => {
-          alert("Message successfully sent!");
-          window.location.reload(false);
-        },
-        () => {
-          alert("Failed to send the message, please try again");
+    try {
+      await emailjs.sendForm(
+        "service_hljrizu",
+        "template_wg50mct",
+        formRef.current,
+        {
+          publicKey: "r26cjvE4a-FpY3gmx",
         }
       );
+      setNotification("Email sent successfully!");
+      // Optionally clear the form after successful sending
+      formRef.current.reset();
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setNotification("Failed to send email. Please try again.");
+    }
   };
 
   return (
@@ -49,30 +62,45 @@ const Contact = () => {
               />
             </h1>
             <p className="about-text">
-              Ready for any oppurtunities or questions you may have!
+              Ready for any opportunities or questions you may have!
             </p>
           </div>
           <div className="contact-form">
-            <form ref={form} onSubmit={sendEmail}>
+            <form ref={formRef} onSubmit={sendEmail}>
               <label>Name</label>
-              <input className="left half" placeholder="Name" type="text" name="name" required />
+              <input type="text" name="user_name" placeholder="Name" required />
               <label>Email</label>
-              <input className="left half" placeholder="Email" type="email" name="email" required />
+              <input
+                type="email"
+                name="user_email"
+                placeholder="Email"
+                required
+              />
               <label>Subject</label>
               <input
-                placeholder="Subject"
                 type="text"
-                name="subject"
+                name="user_subject"
+                placeholder="Subject"
                 required
               />
               <label>Message</label>
               <textarea
+                name="user_message"
                 placeholder="Message"
-                name="message"
                 required
               ></textarea>
-              <input type="submit" className="flat-button" value="SEND" />
+              <input type="submit" className="flat-button" value="Send" />
             </form>
+            <h2>
+              {notification && (
+                <div className="notification">{notification}</div>
+              )}
+              {notification && (
+                <Link to="/home" className="flat-button">
+                  Back to Home
+                </Link>
+              )}
+            </h2>
           </div>
         </div>
       </div>

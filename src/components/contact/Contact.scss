@@ -12,6 +12,12 @@
       margin-top: 24%;
       width: 80%;
 
+      .notification {
+        color: #ffd700;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
       input[type="text"],
       input[type="email"] {
         width: 100%;
@@ -59,4 +65,13 @@
       }
     }
   }
+}
+@media screen and (max-width: 1400px) {
+  .container-text-zone {
+    .text-zone {
+      padding-top: 10rem;
+      margin: auto;
+    }
+  }
+
 }
