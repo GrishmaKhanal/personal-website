@@ -2,47 +2,15 @@
   top: 0;
   width: 80%;
   .container-text-zone {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-
-    .text-zone{
+    
+    .text-zone {
       margin-top: -10%;
     }
     .contact-form {
-      margin-top: -10%;
-      top: 0;
+      position: relative;
+      margin: auto;
+      margin-top: 24%;
       width: 80%;
-
-      ul {
-        padding: 0;
-        margin: 0;
-
-        li {
-          padding: 0;
-          margin: 0;
-          list-style: none;
-          margin-bottom: 10px;
-          opacity: 0;
-          overflow: hidden;
-          display: block;
-          clear: both;
-          position: relative;
-          animation: fadeInUp 2s 2s;
-          animation-fill-mode: forwards;
-        }
-
-        li.half {
-          width: 49%;
-          margin-left: 2%;
-          float: left;
-          clear: none;
-
-          &:first-child {
-            margin-left: 0;
-          }
-        }
-      }
 
       input[type="text"],
       input[type="email"] {
@@ -57,6 +25,7 @@
       }
 
       textarea {
+        resize: none;
         width: 100%;
         border: 0;
         background: #115173;
@@ -70,10 +39,10 @@
 
       .flat-button {
         color: #ffd700;
-        font-size: 11px;
+        font-size: 16px;
         letter-spacing: 3px;
         text-decoration: none;
-        padding: 8px 10px;
+        padding: 10px 12px;
         border: 1px solid #ffd700;
         float: left;
         border-radius: 4px;
@@ -83,7 +52,11 @@
         text-align: center;
         margin-right: 10px;
       }
+      .flat-button:hover {
+        color: black;
+        background-color: #ffd700;
+        cursor: pointer;
+      }
     }
   }
 }
-

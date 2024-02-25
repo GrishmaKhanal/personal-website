@@ -16,7 +16,7 @@ const Error404 = () => {
     const timeoutId = setTimeout(() => {
       console.log("letter class = " + letterClass);
       setLetterClass("text-animate-hover");
-    }, 4000);
+    }, 3000);
 
     return () => clearTimeout(timeoutId);
   }, []);
