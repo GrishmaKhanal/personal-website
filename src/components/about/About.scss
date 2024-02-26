@@ -17,7 +17,7 @@
 }
 
 .skills {
-  margin-top: 13%;
+  margin-top: 16%;
   position: relative;
   top: auto;
   width: 50%;
@@ -41,7 +41,7 @@
   border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.4);
   text-align: center;
-  font-size: 2rem;
+  font-size: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,13 +63,21 @@
     align-items: center;
     gap: 5rem;
   }
-  .container-text-zone{
+  .container-text-zone {
     margin-left: 8%;
   }
 
-
   .skills {
-    margin-top: -5%;
+    margin-top: 5%;
     width: 90%;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  @media screen and (max-width: 1440px) {
+    .face1,
+    .face2 {
+      margin-top: 13%;
+    }
   }
 }
