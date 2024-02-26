@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import PortfolioImage from "../../../public/project-images/portfolio.png";
 import SupplyChainImage from "../../../public/project-images/supply-chain-management.png";
 import ICTImage from "../../../public/project-images/ict-website.png";
-import ProjectImage from "../../../public/project-images/project.webp";
 import GrammarImage from "../../../public/project-images/grammar-error-correction.png";
 import "./Projects.scss";
 import Layout from "../layout/Layout";
