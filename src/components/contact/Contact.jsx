@@ -90,16 +90,15 @@ const Contact = () => {
                 required
               ></textarea>
               <input type="submit" className="flat-button" value="Send" />
+              <Link to="/home" className="flat-button new-button">
+                Back to Home
+              </Link>
             </form>
             <h2>
               {notification && (
                 <div className="notification">{notification}</div>
               )}
-              {notification && (
-                <Link to="/home" className="flat-button">
-                  Back to Home
-                </Link>
-              )}
+
             </h2>
           </div>
         </div>

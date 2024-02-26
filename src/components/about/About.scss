@@ -1,74 +1,75 @@
+/* General Styles */
+
 .about-page {
   display: flex;
-  justify-content: space-around;
-  top: 0;
-  gap: 100rem;
+  flex-direction: column;
+  margin-top: 0;
+}
 
-  .text-zone {
-    position: relative;
-    width: 100%;
+.text-zone {
+  position: relative;
+  width: 50%;
+}
 
-    .about-text {
-      font-size: 1.5rem;
-      letter-spacing: 0.8px;
-    }
-  }
+.about-text {
+  font-size: 1.5rem;
+  letter-spacing: 0.8px;
 }
 
 .skills {
+  margin-top: 13%;
   position: relative;
+  top: auto;
+  width: 50%;
+  align-self: flex-end;
   display: flex;
-  align-items: center;
-
-  .cubespinner {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-
-    .face2 img {
-      width: 80px;
-      height: 80px;
-      user-select: none;
-      object-fit: contain;
-      filter: saturate(50%);
-    }
-
-    .face1,
-    .face2 {
-      position: relative;
-      width: 100px;
-      height: 100px;
-      border: 1px solid #ccc;
-      background: rgba(255, 255, 255, 0.4);
-      text-align: center;
-      font-size: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 20px 0px lightyellow;
-    }
-  }
+  justify-content: center;
 }
 
-@media screen and (max-width: 1400px) {
+.cubespinner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.face1,
+.face2 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 0px lightyellow;
+}
+
+.face2 img {
+  width: 80px;
+  height: 80px;
+  user-select: none;
+  object-fit: contain;
+  filter: saturate(50%);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1080px) {
   .about-page {
-    display: flex;
     flex-direction: column;
-    gap: 10rem;
+    align-items: center;
+    gap: 5rem;
+  }
+  .container-text-zone{
+    margin-left: 8%;
+  }
 
-    .container-text-zone{
-      display: block;
-      left: 10%;
-      width: 90%;
-      justify-content: center;
-      align-items: center;
-    }
 
-    .skills{
-      display: block;
-      left: 15%;
-      width: 90%;
-    }
-  }  
+  .skills {
+    margin-top: -5%;
+    width: 90%;
+  }
 }
